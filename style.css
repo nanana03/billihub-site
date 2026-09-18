@@ -1,0 +1,53 @@
+/* BilliHub の公開ページ。色は**アプリの夜テーマ**（src/theme.js の ocean）に合わせている。
+   ⚠️ アプリの色を変えたら、ここも合わせる。
+   ⚠️ 体裁の元＝nanana03/mtbhub-site/style.css（同じ作りにして、直すときに迷わないようにする）。 */
+:root {
+  --bg: #0D1A1C;      /* ocean.paper */
+  --card: #153036;    /* ocean.card */
+  --ink: #E7EEEB;     /* ocean.ink */
+  --sub: #8FADAC;     /* ocean.ink2 */
+  --line: #234A52;    /* ocean.line */
+  --accent: #54AFC4;  /* ocean.accent */
+  --warn: #D9C79A;    /* ocean.chalk */
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.85;
+  -webkit-text-size-adjust: 100%;
+}
+main { max-width: 720px; margin: 0 auto; padding: 28px 20px 64px; }
+header.hero { text-align: center; padding: 32px 0 4px; }
+h1 { font-size: 1.9rem; letter-spacing: .02em; }
+h1 .hub { color: var(--accent); }
+.hero .en { color: var(--sub); font-size: .9rem; letter-spacing: .16em; margin-top: 2px; }
+.hero .tagline { margin-top: 16px; color: var(--ink); font-size: 1rem; }
+h2 {
+  font-size: 1.2rem; margin: 42px 0 14px;
+  padding-left: 12px; border-left: 4px solid var(--accent);
+}
+h3 { font-size: 1rem; margin: 20px 0 8px; color: var(--accent); }
+p, li, td, th { color: var(--sub); font-size: .95rem; }
+strong { color: var(--ink); }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px 20px; margin-bottom: 12px;
+}
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: .4em; }
+a { color: var(--accent); }
+.updated { color: var(--sub); font-size: .85rem; margin-top: 8px; }
+table { width: 100%; border-collapse: collapse; margin: 6px 0 2px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); font-size: .9rem; }
+th { color: var(--ink); font-weight: 800; }
+.note { color: var(--warn); }
+nav.links { text-align: center; margin-top: 28px; }
+nav.links a { margin: 0 10px; font-weight: 700; }
+footer {
+  margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
+  color: var(--sub); font-size: .85rem; text-align: center;
+}
+/* 横に広い表は、はみ出さずに中でスクロールさせる */
+.scroll { overflow-x: auto; }

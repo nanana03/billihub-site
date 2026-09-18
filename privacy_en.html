@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — BilliHub</title>
+  <meta name="description" content="The BilliHub privacy policy: what we store, location, photos, notifications and advertising.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Privacy Policy</h1>
+    <div class="en">BILLIHUB</div>
+    <p class="updated">Last updated: September 18, 2026</p>
+  </header>
+
+  <p>BilliHub ("the App") is an app for keeping your billiards records and sharing them with the people you play with. The App is designed around one principle: <strong>do not collect what is not needed.</strong></p>
+  <h2>1. Your account</h2>
+  <div class="card">
+    <ul>
+      <li>The App <strong>creates an anonymous account automatically</strong> the first time you open it, so your records belong to you and can be deleted later.</li>
+      <li>When you do something other people can see — posting, following — we ask you to verify yourself with one of: <strong>email and password</strong>, <strong>Sign in with Apple</strong>, or <strong>Sign in with Google</strong>.</li>
+      <li>With <strong>Sign in with Apple</strong>, you can keep your email address hidden from us.</li>
+      <li>Your account holds an internal identifier (a random ID), the <strong>display name</strong> you choose, and a <strong>profile photo</strong> if you set one.</li>
+      <li><strong>Your display name is shown to other users. Do not use your real name.</strong></li>
+    </ul>
+  </div>
+  <h2>2. What is stored on the server</h2>
+  <p>To share them with other people, the following are <strong>stored on the server</strong>:</p>
+  <div class="card scroll">
+    <table>
+      <tr><th>Stored</th><th>Contents</th></tr>
+      <tr><td>Posts</td><td>Text, photos, time posted, and a copy of a match result if you attached one</td></tr>
+      <tr><td>Profile</td><td>Display name, profile photo</td></tr>
+      <tr><td>Follows</td><td>Who you follow</td></tr>
+      <tr><td>Check-ins</td><td>The <strong>shop name</strong> and time of "I'm playing here right now"</td></tr>
+      <tr><td>Shops</td><td><strong>The name and location (latitude and longitude) of a shop.</strong> This is a shared list</td></tr>
+      <tr><td>Blocks</td><td>Who you blocked</td></tr>
+      <tr><td>Reports</td><td>The content and reason of a report</td></tr>
+      <tr><td>Notification address</td><td>Your device's <strong>notification token</strong>, language and platform (see §9)</td></tr>
+    </table>
+  </div>
+  <p>🔴 <strong>The shop list itself does not say who added an entry.</strong> It holds only the name and the location, and <strong>other users cannot tell who added a shop.</strong></p>
+  <p>However, so that the person who added a shop can correct it, we do keep a record of <strong>which shop was added by whom, stored separately</strong>. That record is <strong>readable only by that person and by us</strong> — never by other users.</p>
+  <p>The following stay <strong>only on your device</strong> and are never sent to the server:</p>
+  <div class="card scroll">
+    <table>
+      <tr><th>On your device only</th><th>Contents</th></tr>
+      <tr><td>Match records</td><td>Opponent, game, score, date</td></tr>
+      <tr><td>5-9</td><td>Match in progress, point-game records, saved rules</td></tr>
+      <tr><td>My cues</td><td>Name, maker, photo, notes, parts</td></tr>
+      <tr><td>Favourite shops</td><td>Shop names and notes</td></tr>
+      <tr><td>App settings</td><td>Whether to share check-ins as posts, and similar</td></tr>
+      <tr><td>Mutes and hidden posts</td><td>Records of posts you hid</td></tr>
+    </table>
+  </div>
+  <p>Storage is provided by <strong>Firebase</strong> (Google; database and authentication, <strong>Tokyo region</strong>) and <strong>Cloudflare R2</strong> (photos). <strong>Data may be stored on servers outside your country.</strong></p>
+  <h2>3. Location</h2>
+  <p>Your location is read <strong>once</strong>, when you open the check-in screen. It is used for two things:</p>
+  <div class="card">
+    <ul>
+      <li><strong>To put nearby shops at the top of the list.</strong> For this purpose your location is used for sorting only — it is <strong>neither stored nor sent anywhere</strong>.</li>
+      <li><strong>To add a shop that is not on the list yet.</strong> When you add one, the location at that moment is <strong>saved on the server as that shop's location</strong> (the "Shops" row in section 2). From then on, the shop appears automatically for anyone who goes there.</li>
+    </ul>
+  </div>
+  <p>🔴 <strong>What is saved is the shop's location, not a record of your movements.</strong> No location history is kept. The link between you and a shop you added is stored as described in section 2 — <strong>readable only by you and by us</strong>, so that you can correct your own entries.</p>
+  <p>🔴 <strong>It never tracks you continuously and never reads your location in the background.</strong> We do not look up where you are while the App is closed.</p>
+  <p>🔴 <strong>Granting location permission is optional.</strong> Check-in works without it — you pick a shop by name or type one in; the list simply is not sorted by distance.</p>
+  <p>⚠️ When you add a shop, <strong>its location is shared with other users.</strong> Do not add your home, or anywhere else you do not want other people to know about, as a shop.</p>
+  <p>⚠️ A <strong>check-in</strong> itself tells your followers that you are at a shop (see section 5). That is not location data — it is <strong>the shop name you chose</strong>.</p>
+  <h2>4. Photos</h2>
+  <div class="card">
+    <ul>
+      <li>When you pick a photo, the App <strong>re-encodes it as JPEG on your device</strong> before uploading. Capture metadata (Exif, which can include the latitude and longitude of where the photo was taken) is not carried over by that re-encoding.</li>
+      <li>The upload path also strips the Exif and comment segments (a second layer).</li>
+      <li><strong>Post photos and profile photos are visible to other users</strong>, including your followers.</li>
+      <li><strong>My cue photos stay on your device only.</strong></li>
+    </ul>
+  </div>
+  <h2>5. Who can see what</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Posts and profiles</strong> are visible to signed-in users.</li>
+      <li><strong>Check-ins</strong> are visible <strong>only to people who follow you</strong>.</li>
+      <li>However, if <strong>you</strong> turn on the setting "<strong>Also share check-ins as posts</strong>", every check-in also creates a <strong>post</strong> containing the venue name (for example, "Came to ___"). <strong>Posts are visible to everyone who is signed in</strong> — a wider audience than check-ins.</li>
+      <li><strong>This setting is off by default.</strong> While it is off, no check-in ever becomes a post.</li>
+      <li>The setting lives under Settings on the "Me" tab and can be turned off at any time. Posts that were already created can be deleted by you from the timeline (and if you <strong>undo</strong> a check-in right away, its post is deleted with it).</li>
+      <li><strong>Match records themselves</strong> stay on your device and are not visible to others. Only when you attach one to a post does <strong>a copy</strong> become part of that post.</li>
+    </ul>
+  </div>
+  <h2>6. Reports and blocks</h2>
+  <div class="card">
+    <ul>
+      <li>The content of a report is <strong>readable only by us</strong>. Other users never see it.</li>
+      <li>🔴 <strong>Nobody can delete a report — not even the person who filed it.</strong> This prevents abuse (reporting someone and then erasing the trail). Reports survive account deletion.</li>
+      <li>You can undo a block yourself.</li>
+    </ul>
+  </div>
+  <h2>7. Deleting your account</h2>
+  <p>You can delete your account at any time from "Delete account" on the Me tab.</p>
+  <p><strong>Removed from the server</strong>: posts, photos, follows, check-ins, profile.</p>
+  <p><strong>What remains</strong>, and why it cannot be removed:</p>
+  <div class="card">
+    <ul>
+      <li><strong>Reports</strong> we have received (see section 6)</li>
+      <li><strong>Suspension records</strong> applied by us</li>
+      <li><strong>Other people's records of following you</strong> (only they can delete those)</li>
+      <li><strong>Photos attached to posts created before September 11, 2026</strong> (an older format that the deletion path cannot reach)</li>
+      <li>If you delete an account while still anonymous, <strong>an internal identifier with nothing in it</strong>. It is empty, and that account can never be signed into again.</li>
+      <li>🔴 <strong>Shops you added</strong> (name and location). The shop list is <strong>shared</strong>: other people have bookmarked those shops and check in at them. Deleting one would leave their screens pointing at a shop that no longer exists, so shops stay. ⚠️ The record of <strong>which shops you added</strong> (section 2) <strong>is deleted.</strong></li>
+    </ul>
+  </div>
+  <p>Things stored on your device (match records, 5-9, my cues, favourite shops, display settings) <strong>remain</strong>. We do not think a record of the games you played should disappear merely because you closed your account.</p>
+  <h2>8. BilliHub Pro</h2>
+  <div class="card">
+    <ul>
+      <li>Purchases and cancellations are handled through the <strong>Apple App Store</strong>.</li>
+      <li><strong>We never receive your payment details, such as credit card numbers.</strong></li>
+      <li>All we keep is whether an active plan exists.</li>
+    </ul>
+  </div>
+  <h2>9. Notifications</h2>
+  <p>When someone you follow checks in at a venue, we send a notification to your device.</p>
+  <div class="card">
+    <ul>
+      <li>To do that we keep your device's <strong>notification token</strong> (the address issued by Apple), your <strong>language</strong> and your <strong>platform</strong>. They are stored in <strong>Cloudflare KV</strong> and can be read <strong>only by the program that sends the notifications</strong>. Other users cannot see them.</li>
+      <li><strong>Notifications are written in the language of the person receiving them.</strong> That is why we keep the language.</li>
+      <li><strong>Turning off "Receive notifications" in Settings deletes this device's registration.</strong> We do not keep a "may we send" flag - we delete the registration itself (with no registration there is nothing to send to).</li>
+      <li><strong>Deleting your account also deletes the registration.</strong></li>
+      <li>We delete it as well when Apple tells us the address no longer exists.</li>
+      <li>⚠️ Notifications require the <strong>OS permission</strong>. If you declined it, nothing is delivered. The rest of the App (check-ins and so on) works with notifications turned off.</li>
+    </ul>
+  </div>
+  <h2>10. Advertising</h2>
+  <p>🔴 <strong>The free version shows ads (Google AdMob native ads) in the timeline.</strong></p>
+  <div class="card">
+    <ul>
+      <li>🔴 <strong>Ads are fixed to "non-personalised".</strong> They are not chosen from your behaviour or history. The only signals used are <strong>what is on the screen</strong> and your <strong>approximate area</strong>.</li>
+      <li>Because of that we <strong>do not show the App Tracking Transparency prompt</strong>. We do not use the advertising identifier to link your data with other companies' apps or sites. (Google states that for non-personalised ads the advertising identifier is still used for <strong>frequency capping and aggregate reporting</strong>. <a href="https://support.google.com/admob/answer/7676680">Reference</a>)</li>
+      <li><strong>You can report an ad.</strong> Tap the ad card's "..." and choose to report it: a draft email opens, and you can read and edit it before sending. The body contains <strong>only information identifying the ad and the app version</strong> - nothing that identifies you.</li>
+      <li><strong>There is no analytics.</strong> We have not built in anything that tracks how you use the App.</li>
+    </ul>
+  </div>
+  <h2>11. Contact</h2>
+  <p><code>nanana03info@gmail.com</code></p>
+
+<nav class="links"><a href="privacy_en.html">Privacy Policy</a><a href="terms_en.html">Terms of Use</a><a href="privacy.html">日本語</a></nav>
+  <footer>nanana03info@gmail.com</footer>
+</main>
+</body>
+</html>
