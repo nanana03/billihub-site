@@ -12,7 +12,7 @@
   <header class="hero">
     <h1>Privacy Policy</h1>
     <div class="en">BILLIHUB</div>
-    <p class="updated">Last updated: September 18, 2026</p>
+    <p class="updated">Last updated: September 30, 2026</p>
   </header>
 
   <p>BilliHub ("the App") is an app for keeping your billiards records and sharing them with the people you play with. The App is designed around one principle: <strong>do not collect what is not needed.</strong></p>
@@ -39,6 +39,8 @@
       <tr><td>Blocks</td><td>Who you blocked</td></tr>
       <tr><td>Reports</td><td>The content and reason of a report</td></tr>
       <tr><td>Notification address</td><td>Your device's <strong>notification token</strong>, language and platform (see §9)</td></tr>
+      <tr><td>My cues (when you choose an audience)</td><td>Name, maker, parts and photo. <strong>Notes are never sent</strong> (see §5)</td></tr>
+      <tr><td>Favourite shops (when you choose an audience)</td><td>Which shops (their IDs in the shared list only). <strong>Notes are never sent</strong> (see §5)</td></tr>
     </table>
   </div>
   <p>🔴 <strong>The shop list itself does not say who added an entry.</strong> It holds only the name and the location, and <strong>other users cannot tell who added a shop.</strong></p>
@@ -49,8 +51,8 @@
       <tr><th>On your device only</th><th>Contents</th></tr>
       <tr><td>Match records</td><td>Opponent, game, score, date</td></tr>
       <tr><td>5-9</td><td>Match in progress, point-game records, saved rules</td></tr>
-      <tr><td>My cues</td><td>Name, maker, photo, notes, parts</td></tr>
-      <tr><td>Favourite shops</td><td>Shop names and notes</td></tr>
+      <tr><td>My cues</td><td>Notes (and everything else, if the audience is set to "No one")</td></tr>
+      <tr><td>Favourite shops</td><td>Notes (and which shops, if the audience is set to "No one")</td></tr>
       <tr><td>App settings</td><td>Whether to share check-ins as posts, and similar</td></tr>
       <tr><td>Mutes and hidden posts</td><td>Records of posts you hid</td></tr>
     </table>
@@ -75,17 +77,21 @@
       <li>When you pick a photo, the App <strong>re-encodes it as JPEG on your device</strong> before uploading. Capture metadata (Exif, which can include the latitude and longitude of where the photo was taken) is not carried over by that re-encoding.</li>
       <li>The upload path also strips the Exif and comment segments (a second layer).</li>
       <li><strong>Post photos and profile photos are visible to other users</strong>, including your followers.</li>
-      <li><strong>My cue photos stay on your device only.</strong></li>
+      <li><strong>My cue photos</strong> are uploaded only when you choose an audience other than "No one". <strong>Only the people you chose can see them</strong> — each time, we check that the viewer is allowed before sending the photo; knowing its address is not enough. Switching back to "No one" deletes them.</li>
     </ul>
   </div>
   <h2>5. Who can see what</h2>
   <div class="card">
     <ul>
       <li><strong>Posts and profiles</strong> are visible to signed-in users.</li>
-      <li><strong>Check-ins</strong> are visible <strong>only to people who follow you</strong>.</li>
+      <li><strong>Check-ins</strong> are visible to <strong>the audience you choose</strong>: "No one", "Followers" or "Group". <strong>It starts as "Followers"</strong> (change it under Settings on the Me tab). With "Group", only the members of that group can see it — not your followers.</li>
       <li>However, if <strong>you</strong> turn on the setting "<strong>Also share check-ins as posts</strong>", every check-in also creates a <strong>post</strong> containing the venue name (for example, "Came to ___"). <strong>Posts are visible to everyone who is signed in</strong> — a wider audience than check-ins.</li>
       <li><strong>This setting is off by default.</strong> While it is off, no check-in ever becomes a post.</li>
       <li>The setting lives under Settings on the "Me" tab and can be turned off at any time. Posts that were already created can be deleted by you from the timeline (and if you <strong>undo</strong> a check-in right away, its post is deleted with it).</li>
+      <li><strong>My cues and favourite shops</strong> are visible to <strong>the audience you choose</strong>: "No one", "Followers", "Everyone" or "Group". <strong>It starts as "Followers".</strong> You choose separately for cues and for shops, at the top of each screen.</li>
+      <li>Others can see only the <strong>name, maker, parts and photo</strong> of a cue, and only the <strong>name</strong> of a shop. 🔴 <strong>Notes are never visible</strong> (they are not sent to the server).</li>
+      <li>"Everyone" means every signed-in user; "Group" means only the members of that group.</li>
+      <li>Showing them to others <strong>requires an account</strong>. While you are anonymous they stay on your device.</li>
       <li><strong>Match records themselves</strong> stay on your device and are not visible to others. Only when you attach one to a post does <strong>a copy</strong> become part of that post.</li>
     </ul>
   </div>
@@ -99,7 +105,7 @@
   </div>
   <h2>7. Deleting your account</h2>
   <p>You can delete your account at any time from "Delete account" on the Me tab.</p>
-  <p><strong>Removed from the server</strong>: posts, photos, follows, check-ins, profile.</p>
+  <p><strong>Removed from the server</strong>: posts, photos, follows, check-ins, profile, and the <strong>copies of your cues and favourite shops that you showed to others</strong> (including cue photos).</p>
   <p><strong>What remains</strong>, and why it cannot be removed:</p>
   <div class="card">
     <ul>
@@ -111,7 +117,7 @@
       <li>🔴 <strong>Shops you added</strong> (name and location). The shop list is <strong>shared</strong>: other people have bookmarked those shops and check in at them. Deleting one would leave their screens pointing at a shop that no longer exists, so shops stay. ⚠️ The record of <strong>which shops you added</strong> (section 2) <strong>is deleted.</strong></li>
     </ul>
   </div>
-  <p>Things stored on your device (match records, 5-9, my cues, favourite shops, display settings) <strong>remain</strong>. We do not think a record of the games you played should disappear merely because you closed your account.</p>
+  <p>Things stored on your device (match records, 5-9, my cues, favourite shops, display settings) <strong>remain</strong> (the copies you showed to others are removed from the server; the originals on your device are not). We do not think a record of the games you played should disappear merely because you closed your account.</p>
   <h2>8. BilliHub Pro</h2>
   <div class="card">
     <ul>
