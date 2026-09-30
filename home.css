@@ -1,0 +1,53 @@
+/* BilliHub の公式サイト（index.html / index_en.html）の見た目。2026-09-30 Mac・案 S3「ノート型」（design/site_mock.html）。
+   色＝アプリの src/theme.js（昼 diner・夜 ocean）。端末の昼夜の設定で切り替わる。
+   ⚠️ アプリの色を変えたら、ここも合わせる。規約・プライバシーの見た目は style.css（こちらとは別）。 */
+:root {
+  --paper: #F2E8D5; --card: #FBF5E8; --line: #DECBA8; --ink: #3E2F22; --ink2: #746351;
+  --accent: #A75124; --chalk: #567453; --onAccent: #FFF8EE;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0D1A1C; --card: #153036; --line: #234A52; --ink: #E7EEEB; --ink2: #8FADAC;
+    --accent: #54AFC4; --chalk: #D9C79A; --onAccent: #0D1A1C;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Segoe UI", sans-serif;
+  line-height: 1.8; -webkit-text-size-adjust: 100%;
+  /* 罫線のノート（フィーチャー画像と同じ世界観） */
+  background-image: repeating-linear-gradient(to bottom, transparent 0 31px,
+    color-mix(in srgb, var(--line) 55%, transparent) 31px 32px);
+}
+a { color: var(--chalk); }
+img { display: block; max-width: 100%; height: auto; }
+.page { max-width: 860px; margin: 0 auto; border-left: 6px solid var(--accent); min-height: 100vh; padding: 40px 20px 0 28px; }
+.lang { text-align: right; font-size: .9rem; margin-bottom: 8px; }
+
+.hero { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.hero .icon { width: 120px; height: 120px; border-radius: 26px; }
+h1 { font-size: 2.8rem; line-height: 1.1; }
+.sub { display: inline-block; color: var(--accent); font-weight: 800; font-size: 1.2rem; border-bottom: 3px solid var(--chalk); margin-top: 6px; }
+.tag { font-size: 1.1rem; margin: 10px 0 14px; }
+/* Apple の決まり＝画面上は高さ 40px 以上・周りに高さの 1/4 の余白・加工しない */
+.badge { display: inline-block; padding: 12px 12px 12px 0; }
+.badge img { height: 48px; width: auto; }
+.soon { display: block; font-size: .85rem; color: var(--ink2); }
+
+h2 { font-size: 1.25rem; margin: 52px 0 16px; }
+ol.feat { list-style: none; display: grid; gap: 18px; }
+ol.feat li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.ball { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+.ball b { width: 22px; height: 22px; border-radius: 50%; background: #FBF5E8; color: #3E2F22; font-size: .8rem; display: grid; place-items: center; }
+ol.feat h3 { font-size: 1.05rem; }
+ol.feat p { color: var(--ink2); font-size: .95rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.shot { border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.memo { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; box-shadow: 2px 3px 0 var(--line); }
+.memo p { color: var(--ink2); margin-bottom: 6px; }
+.memo li { color: var(--ink2); margin-left: 1.2em; }
+
+footer { margin-top: 56px; padding: 22px 0 40px; border-top: 1px solid var(--line); text-align: center; color: var(--ink2); font-size: .85rem; }
+.docs { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; margin-bottom: 10px; }

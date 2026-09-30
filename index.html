@@ -3,52 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BilliHub — 撞いた記録と、撞く仲間</title>
-  <meta name="description" content="ビリヤードの対戦成績・5-9 の収支・マイキュー・「いまこの店で撞いている」。iOS アプリ BilliHub の公開ページ（プライバシーポリシー・利用規約）。">
-  <link rel="stylesheet" href="style.css">
+  <title>BilliHub — ビリヤードのSNS</title>
+  <meta name="description" content="撞いた日を残して、仲間と分け合う。対戦の記録と通算成績・5-9 のスコア表・ボーラード・マイキュー・チェックイン。ビリヤード用の iOS アプリ BilliHub の公式サイト。">
+  <link rel="canonical" href="https://billihub.nananasoft.com/">
+  <link rel="alternate" hreflang="ja" href="https://billihub.nananasoft.com/">
+  <link rel="alternate" hreflang="en" href="https://billihub.nananasoft.com/index_en.html">
+  <meta property="og:title" content="BilliHub — ビリヤードのSNS">
+  <meta property="og:description" content="撞いた日を残して、仲間と分け合う。">
+  <meta property="og:image" content="https://billihub.nananasoft.com/img/og.png">
+  <meta property="og:url" content="https://billihub.nananasoft.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/icon-256.png">
+  <link rel="apple-touch-icon" href="img/icon-256.png">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<main>
+<!-- 文面の正本＝_store/appstore_ja.md（App Store の説明文）。そこに無い機能は書かない。案＝design/site_mock.html の S3。
+     旧版（2026-09-18〜09-29）は 09-18 時点の機能4つと書類へのリンクだけの入口だった。 -->
+<div class="page">
+  <p class="lang"><a href="index_en.html" hreflang="en">English</a></p>
+
   <header class="hero">
-    <h1>Billi<span class="hub">Hub</span></h1>
-    <div class="en">BILLIARDS</div>
-    <p class="tagline">撞いた記録を残して、撞く仲間とつながる。<br>ビリヤード用の iOS アプリです。</p>
+    <img class="icon" src="img/icon-256.png" alt="BilliHub のアイコン" width="120" height="120">
+    <div>
+      <h1>BilliHub</h1>
+      <div class="sub">ビリヤードのSNS</div>
+      <p class="tag">撞いた日を残して、仲間と分け合う。</p>
+      <a class="badge" href="https://apps.apple.com/jp/app/id6809142556">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ja-jp">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ja-jp" alt="App Store からダウンロード">
+        </picture>
+      </a>
+      <span class="soon">Android 版は準備中です</span>
+    </div>
   </header>
 
   <h2>できること</h2>
-  <div class="card">
-    <ul>
-      <li><strong>対戦成績を残す</strong> — 種目・スコア・日付・店。相手の承認で確定します。</li>
-      <li><strong>5-9（ジャパンナイン）の収支</strong> — 卓のルールを保存して、通算の±を数えます。</li>
-      <li><strong>マイキュー</strong> — キューとパーツを写真つきで。端末の中だけに残ります。</li>
-      <li><strong>いまこの店で撞いている</strong> — 1タップで、フォロワーにだけ伝わります。</li>
-    </ul>
+  <ol class="feat">
+    <li><span class="ball"><b>1</b></span><div><h3>対戦の記録と通算成績</h3>
+      <p>ナインボール・エイトボール・テンボール・5-9。相手とスコアと日付を残すと、通算の勝敗と相手ごとの成績が出ます。残した結果は、そのまま投稿にしてフォロワーに流せます。</p></div></li>
+    <li><span class="ball"><b>2</b></span><div><h3>5-9 のスコア表</h3>
+      <p>紙のスコアシートと同じ形で、ラックごとに点を付けられます。配点は店ごと、仲間内ごとに違うので、ルールセットとして作って保存できます。ハンデは人ごとに。2人から6人まで。</p></div></li>
+    <li><span class="ball"><b>3</b></span><div><h3>ボーラード</h3>
+      <p>フレーム表をタップで付けると、ストライクとスペアの繰り越しはアプリが計算します。平均とベスト、クラスの目安も出ます。</p></div></li>
+    <li><span class="ball"><b>4</b></span><div><h3>マイキュー</h3>
+      <p>持っているキューを写真とメモで残せます。シャフトやタップなどのパーツも自由に書けます。</p></div></li>
+    <li><span class="ball"><b>5</b></span><div><h3>よく行く店とチェックイン</h3>
+      <p>「20時14分に ○○ へ」を1タップで。時刻だけを残すので、時間が経っても嘘になりません。</p></div></li>
+    <li><span class="ball"><b>6</b></span><div><h3>フォローはその場で QR</h3>
+      <p>QR を見せて読んでもらうだけ。名前を打ち間違える手間がありません。</p></div></li>
+  </ol>
+
+  <h2>画面</h2>
+  <div class="grid">
+    <img class="shot" src="img/shot-1.png" alt="対戦を記録する画面" width="540" height="960" loading="lazy">
+    <img class="shot" src="img/shot-3.png" alt="5-9 のスコア表" width="540" height="960" loading="lazy">
+    <img class="shot" src="img/shot-5.png" alt="ボーラードのスコア" width="540" height="960" loading="lazy">
+    <img class="shot" src="img/shot-4.png" alt="戦績の画面" width="540" height="960" loading="lazy">
+    <img class="shot" src="img/shot-2.png" alt="投稿する画面" width="540" height="960" loading="lazy">
   </div>
 
   <h2>決めごと</h2>
-  <div class="card">
+  <div class="memo"><ul>
+    <li>GPS は「近くの店を出す」ときだけ使います。常時取得もバックグラウンド取得もしません。</li>
+    <li>チェックインが見えるのはフォロワーだけです。全体公開にはなりません。</li>
+    <li>対戦の記録は、投稿にするまで端末の中だけに残ります。</li>
+    <li>ブロック・ミュート・通報を用意しています。見たくない相手を自分で外せます。</li>
+  </ul></div>
+
+  <h2>BilliHub Pro（月額350円）</h2>
+  <div class="memo">
+    <p>中身はほとんど無料で使えます。Pro は、次のものが要るときの登録です。</p>
     <ul>
-      <li><strong>必要のないものを集めません。</strong> 位置情報を使うのは、店の候補を出すときの1回だけです。</li>
-      <li><strong>常時・バックグラウンドでの位置取得はしません。</strong></li>
-      <li><strong>広告は非パーソナライズに固定</strong>しています（無料版のみ。Pro では広告が出ません）。</li>
+      <li>広告が出ない</li>
+      <li>投稿に写真を4枚まで付けられる（無料は1枚）</li>
+      <li>5-9 のルールセットを何個でも保存できる（無料は1つ）</li>
+      <li>通算成績を全期間で見られる（無料は直近90日）</li>
+      <li>戦績のカレンダーとボーラードの成長グラフを全期間で見られる（無料は直近30日）</li>
     </ul>
   </div>
 
-  <h2>書類</h2>
-  <div class="card">
-    <ul>
-      <li><a href="privacy.html">プライバシーポリシー</a> / <a href="privacy_en.html">Privacy Policy (English)</a></li>
-      <li><a href="terms.html">利用規約</a> / <a href="terms_en.html">Terms of Use (English)</a></li>
-      <li><a href="delete-account.html">アカウントとデータの削除</a></li>
-    </ul>
-  </div>
-
-  <h2>お問い合わせ</h2>
-  <div class="card">
-    <p>nanana03info@gmail.com</p>
-  </div>
-
-  <footer>nanana03info@gmail.com</footer>
-</main>
+  <footer>
+    <div class="docs">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="delete-account.html">アカウントとデータの削除</a>
+    </div>
+    お問い合わせ nanana03info@gmail.com
+  </footer>
+</div>
 </body>
 </html>
