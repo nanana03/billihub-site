@@ -1,0 +1,4 @@
+# GitHub Pages（Jekyll）で公開しないもの。design.md はサイトの設計メモ（社内用）。
+# 公開したくなったら、その行を消す。
+exclude:
+  - design.md
