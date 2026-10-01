@@ -1,0 +1,14 @@
+[
+  {
+    "date": "2026-10-01",
+    "scope": "app",
+    "macrostructure": "custom (rack-led product sheet) + Long Document (書類)",
+    "theme": "custom",
+    "theme_axes": "light+dark (diner F2E8D5 / ocean 0D1A1C) / system sans (app と同じ) / warm orange + cool chalk-blue",
+    "vibe": "Diner '74 × Ocean Chalk, score sheet",
+    "nav": "N9 edge-aligned minimal",
+    "footer": "Ft2 inline rule",
+    "enrichment": "Tier-A CSS art（9番のラック・theme.js の的球の色）",
+    "brief": "BilliHub 公式サイト刷新（index 日英・書類5枚）。design.md を正本に"
+  }
+]

@@ -40,7 +40,6 @@ a:hover { text-decoration-thickness: var(--thick); }
 .bar {
   display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
   min-height: 64px;
-  border-bottom: var(--hair) solid var(--line);
 }
 .mark { display: inline-flex; align-items: center; gap: var(--s-2); color: var(--ink); text-decoration: none; font-weight: 800; letter-spacing: -.01em; white-space: nowrap; }
 .mark img { width: 32px; height: 32px; border-radius: 8px; }
@@ -55,10 +54,10 @@ a:hover { text-decoration-thickness: var(--thick); }
 /* ── ヒーロー：言葉＋ラックの台 ── */
 .hero {
   display: grid; gap: var(--s-7);
-  padding-block: var(--s-7) var(--s-8);
+  padding-block: var(--s-6) var(--s-8);   /* 下を厚く＝次の節へ沈ませる */
 }
 @media (min-width: 960px) {
-  .hero { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: var(--s-8); padding-block: var(--s-9); }
+  .hero { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: var(--s-8); padding-block: var(--s-7) var(--s-9); }
 }
 .kicker {
   display: inline-block; font-weight: 800; color: var(--accent-text); font-size: var(--t-lg); letter-spacing: .06em;
@@ -175,7 +174,7 @@ a:hover { text-decoration-thickness: var(--thick); }
 
 /* ── できること ── */
 .features { padding-block: var(--s-8) var(--s-9); border-top: var(--hair) solid var(--line); }
-.sec { font-size: var(--t-2xl); font-weight: 800; letter-spacing: -.01em; line-height: 1.25; }
+.sec { font-size: var(--t-2xl); font-weight: 800; letter-spacing: -.01em; line-height: 1.25; overflow-wrap: anywhere; min-width: 0; }
 
 .feat {
   display: grid; gap: var(--s-6);
@@ -248,10 +247,10 @@ a:hover { text-decoration-thickness: var(--thick); }
   border: var(--thick) solid var(--ink); border-radius: var(--r-card);
   background: var(--card); overflow: hidden;
 }
-@media (min-width: 768px) { .frames { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .frames { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .frames li { --d: 40px; padding: var(--s-5); display: grid; grid-template-columns: var(--d) minmax(0, 1fr); column-gap: var(--s-3); align-items: center; }
 .frames li + li { border-top: var(--hair) solid var(--line); }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .frames li + li { border-top: 0; border-left: var(--hair) solid var(--line); }
   .frames li { align-content: start; }
 }
@@ -287,7 +286,7 @@ a:hover { text-decoration-thickness: var(--thick); }
 }
 @media (min-width: 600px) { .menu { padding: var(--s-7) var(--s-7); } }
 .menu h2 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-2) var(--s-4); }
-.pro-name { font-size: var(--t-2xl); font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+.pro-name { overflow-wrap: anywhere; font-size: var(--t-2xl); font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
 .price { font-size: var(--t-lg); font-weight: 700; color: var(--accent-text); white-space: nowrap; }
 .price b { font-size: var(--t-2xl); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
 .menu .lead { color: var(--ink2); margin-top: var(--s-4); padding-bottom: var(--s-5); border-bottom: var(--thick) solid var(--ink); }
@@ -303,7 +302,7 @@ a:hover { text-decoration-thickness: var(--thick); }
 
 /* ── 締め ── */
 .close { text-align: center; padding-block: var(--s-8) var(--s-9); }
-.close-tag { font-size: var(--t-2xl); font-weight: 800; line-height: 1.45; letter-spacing: -.01em; }
+.close-tag { overflow-wrap: anywhere; font-size: var(--t-2xl); font-weight: 800; line-height: 1.45; letter-spacing: -.01em; }
 .close .get { justify-content: center; flex-direction: column; gap: var(--s-3); }
 
 /* ── フッター（Ft2：罫線＋1行） ── */
@@ -321,3 +320,8 @@ a:hover { text-decoration-thickness: var(--thick); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 .note { margin-top: var(--s-4); font-size: var(--t-xs); color: var(--ink2); }
+/* 英語の見出し文は日本語より長い＝一段小さく・行間を詰めて2〜3行に収める */
+:lang(en) .tag { font-size: clamp(1.3rem, 2.7vw, 1.85rem); line-height: 1.3; max-width: 24ch; }
+:lang(en) .close-tag { line-height: 1.25; }
+/* 狭い幅：品目を1行に通し、無料との差は次の行の右へ（メニューの値段の位置） */
+@media (max-width: 559px) { .menu li { flex-wrap: wrap; row-gap: 0; } .menu .item { flex: 1 1 100%; } }
