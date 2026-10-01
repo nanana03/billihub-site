@@ -61,6 +61,7 @@
           <div class="col"><i class="b" style="--c:var(--ball-6)"><b>6</b></i><i class="b" style="--c:var(--ball-7)"><b>7</b></i></div>
           <div class="col"><i class="b" style="--c:var(--ball-8)"><b>8</b></i></div>
         </div>
+        <script>/* 9ボールの正式なラック＝先頭1・中央9は固定、残り2〜8は開くたびに無作為 */(()=>{const r=document.currentScript.previousElementSibling,e=[...r.querySelectorAll(".b:not(.s)")].slice(1),n=[2,3,4,5,6,7,8];for(let i=n.length-1;i>0;i--){const j=crypto.getRandomValues(new Uint32Array(1))[0]%(i+1);[n[i],n[j]]=[n[j],n[i]]}e.forEach((b,k)=>{b.style.setProperty("--c","var(--ball-"+n[k]+")");b.firstElementChild.textContent=n[k]})})();</script>
       </div>
     </div>
   </section>
