@@ -1,0 +1,99 @@
+/* Hallmark · tokens · design-system: design.md · designed-as-app
+   BilliHub の公開サイトの色・余白・活字の正本。色の出どころ＝アプリの src/theme.js（diner＝昼／ocean＝夜）。
+   ⚠️ アプリの色を変えたら、ここも合わせる（hex のまま写す）。 */
+:root {
+  color-scheme: light dark;
+
+  /* 昼 diner（theme.js そのまま） */
+  --paper: #F2E8D5;
+  --card: #FBF5E8;
+  --line: #DECBA8;
+  --ink: #3E2F22;
+  --ink2: #746351;
+  --accent: #A75124;
+  --on-accent: #FFF4EA;
+  /* サイトだけの追加：小さい文字で使うとき地の上 4.5 に届かせるため一段濃くした値 */
+  --accent-text: #9A4A20;   /* paper 5.12 / card 5.73 */
+  --link: #4E6B4B;          /* chalk #567453 を濃く：paper 4.9 / card 5.48 */
+
+  /* 反対側の面（ページの中で昼夜を入れ替える帯）＝夜 ocean */
+  --alt-paper: #0D1A1C;
+  --alt-card: #153036;
+  --alt-line: #234A52;
+  --alt-ink: #E7EEEB;
+  --alt-ink2: #8FADAC;
+  --alt-accent: #54AFC4;
+  --alt-link: #D9C79A;
+
+  /* 台：ラシャはアイコンの地の実測色（img/icon-256.png = #284A4A）。昼夜で変えない */
+  --felt: #284A4A;
+  --felt-2: #1F3C3C;
+  --rail: #5A3B26;
+  --rail-2: #47301F;
+  --sight: #E9DDBF;
+
+  /* 的球（theme.js BALL_HUES）。この上に文字を置かない＝数字は白丸の中 */
+  --ball-1: #E3B31C;
+  --ball-2: #1F4FA0;
+  --ball-3: #C22B22;
+  --ball-4: #C75C97;
+  --ball-5: #DD6B1B;
+  --ball-6: #2E7A4C;
+  --ball-7: #8A5A38;
+  --ball-8: #1B1B1B;
+  --ball-white: #FBFBF7;
+  --ball-ink: #1B1B1B;
+  --ball-shade: rgb(0 0 0 / .22);
+
+  --focus: var(--accent);
+
+  /* 書体＝アプリと同じくシステム書体（Web フォントなし） */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Yu Gothic UI", "Segoe UI", Meiryo, sans-serif;
+
+  /* 活字 */
+  --t-xs: .8125rem;
+  --t-sm: .9375rem;
+  --t-md: 1rem;
+  --t-lg: 1.1875rem;
+  --t-xl: clamp(1.35rem, 2.4vw, 1.7rem);
+  --t-2xl: clamp(1.7rem, 4vw, 2.6rem);
+  --t-hero: clamp(1.45rem, 4.2vw, 2.5rem);
+  --t-display: clamp(3.25rem, 15vw, 7.25rem);
+
+  /* 余白（4pt） */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+
+  --r-card: 12px;
+  --r-chip: 8px;
+  --hair: 1px;
+  --thick: 2px;
+
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-short: 180ms;
+  --dur-long: 700ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0D1A1C;
+    --card: #153036;
+    --line: #234A52;
+    --ink: #E7EEEB;
+    --ink2: #8FADAC;
+    --accent: #54AFC4;
+    --on-accent: #04191E;
+    --accent-text: #54AFC4;
+    --link: #D9C79A;
+
+    --alt-paper: #F2E8D5;
+    --alt-card: #FBF5E8;
+    --alt-line: #DECBA8;
+    --alt-ink: #3E2F22;
+    --alt-ink2: #746351;
+    --alt-accent: #9A4A20;
+    --alt-link: #4E6B4B;
+  }
+}

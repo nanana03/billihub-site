@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BilliHub — the billiards social app</title>
   <meta name="description" content="Keep the days you played, and share them with your friends. Match records, 5-9 score sheets, bowlliards, your cues and check-ins. The official site of BilliHub for iOS.">
+  <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1A1C" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://billihub.nananasoft.com/index_en.html">
   <link rel="alternate" hreflang="ja" href="https://billihub.nananasoft.com/">
   <link rel="alternate" hreflang="en" href="https://billihub.nananasoft.com/index_en.html">
@@ -15,83 +17,171 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/icon-256.png">
   <link rel="apple-touch-icon" href="img/icon-256.png">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<!-- English version of index.html. Source of the wording = _store/appstore_ja.md (translated; no features beyond it). -->
-<div class="page">
-  <p class="lang"><a href="index.html" hreflang="ja">日本語</a></p>
+<!-- English version of index.html (made by make_en.py). Source of the wording = _store/appstore_ja.md (translated; no features beyond it).
+     2026-10 redesign: see design.md. The previous version is on the main branch. -->
+<a class="skip" href="#main">Skip to content</a>
 
-  <header class="hero">
-    <img class="icon" src="img/icon-256.png" alt="BilliHub app icon" width="120" height="120">
-    <div>
-      <h1>BilliHub</h1>
-      <div class="sub">The billiards social app</div>
+<header class="bar">
+  <a class="mark" href="index_en.html"><img src="img/icon-64.png" alt="" width="32" height="32"><span>BilliHub</span></a>
+  <nav aria-label="On this page">
+    <a class="wide" href="#features">What it does</a>
+    <a class="wide" href="#pro">Pro</a>
+    <a href="index.html" hreflang="ja" lang="ja">日本語</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-copy">
+      <p class="kicker">The billiards social app</p>
+      <h1 id="title">BilliHub</h1>
       <p class="tag">Keep the days you played, and share them with your friends.</p>
+      <div class="get">
+        <a class="badge" href="https://apps.apple.com/jp/app/id6809142556">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" height="48">
+          </picture>
+        </a>
+        <span class="soon">Currently available in Japan only. Android version coming soon.</span>
+      </div>
+    </div>
+
+    <div class="table" aria-hidden="true">
+      <div class="felt">
+        <span class="cue"></span>
+        <div class="rack">
+          <div class="col"><i class="b" style="--c:var(--ball-1)"><b>1</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-2)"><b>2</b></i><i class="b" style="--c:var(--ball-3)"><b>3</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-4)"><b>4</b></i><i class="b s" style="--c:var(--ball-1)"><b>9</b></i><i class="b" style="--c:var(--ball-5)"><b>5</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-6)"><b>6</b></i><i class="b" style="--c:var(--ball-7)"><b>7</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-8)"><b>8</b></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="h-features">
+    <div class="sec-head">
+    <h2 id="h-features" class="sec">What it does</h2>
+    <nav class="rotation" aria-label="Jump to a feature">
+      <a href="#f1" aria-label="1. Match records and lifetime stats"><span class="ball" style="--c:var(--ball-1)"><b>1</b></span></a>
+      <a href="#f2" aria-label="2. 5-9 score sheet"><span class="ball" style="--c:var(--ball-2)"><b>2</b></span></a>
+      <a href="#f3" aria-label="3. Bowlliards"><span class="ball" style="--c:var(--ball-3)"><b>3</b></span></a>
+      <a href="#f4" aria-label="4. My cues"><span class="ball" style="--c:var(--ball-4)"><b>4</b></span></a>
+      <a href="#f5" aria-label="5. Favorite halls and check-ins"><span class="ball" style="--c:var(--ball-5)"><b>5</b></span></a>
+      <a href="#f6" aria-label="6. Follow with a QR code"><span class="ball" style="--c:var(--ball-6)"><b>6</b></span></a>
+    </nav>
+    </div>
+
+    <article class="feat" id="f1">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-1)" aria-hidden="true"><b>1</b></span>
+        <h3>Match records and lifetime stats</h3>
+        <p>Nine-ball, eight-ball, ten-ball and 5-9. Record your opponent, the score and the date, and see your overall wins and losses and your record against each player. Any result can be shared with your followers as a post.</p>
+      </div>
+      <div class="shots three">
+        <figure><picture><source srcset="img/shot-1.webp" type="image/webp"><img src="img/shot-1.png" alt="Recording a match" width="540" height="960" loading="lazy"></picture><figcaption>Record</figcaption></figure>
+        <figure><picture><source srcset="img/shot-4.webp" type="image/webp"><img src="img/shot-4.png" alt="Match history" width="540" height="960" loading="lazy"></picture><figcaption>History</figcaption></figure>
+        <figure><picture><source srcset="img/shot-2.webp" type="image/webp"><img src="img/shot-2.png" alt="Writing a post" width="540" height="960" loading="lazy"></picture><figcaption>Post</figcaption></figure>
+      </div>
+    </article>
+
+    <div class="pair">
+    <article class="feat duo" id="f2">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-2)" aria-hidden="true"><b>2</b></span>
+        <h3>5-9 score sheet</h3>
+        <p>Score each rack on a sheet laid out like the paper one. Points differ from hall to hall and group to group, so you build and save your own rule sets. Handicaps are set per player. Two to six players.</p>
+      </div>
+      <div class="shots one">
+        <figure><picture><source srcset="img/shot-3.webp" type="image/webp"><img src="img/shot-3.png" alt="5-9 score sheet" width="540" height="960" loading="lazy"></picture></figure>
+      </div>
+    </article>
+
+    <article class="feat duo" id="f3">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-3)" aria-hidden="true"><b>3</b></span>
+        <h3>Bowlliards</h3>
+        <p>Tap the frames and the app carries strikes and spares forward for you. Shows your average, your best and a rough class.</p>
+      </div>
+      <div class="shots one">
+        <figure><picture><source srcset="img/shot-5.webp" type="image/webp"><img src="img/shot-5.png" alt="Bowlliards score" width="540" height="960" loading="lazy"></picture></figure>
+      </div>
+    </article>
+    </div>
+    <p class="note">The screenshots show the Japanese version.</p>
+
+    <ul class="frames">
+      <li id="f4">
+        <span class="ball" style="--c:var(--ball-4)" aria-hidden="true"><b>4</b></span>
+        <h3>My cues</h3>
+        <p>Keep your cues with photos and notes, including parts such as shafts and tips.</p>
+      </li>
+      <li id="f5">
+        <span class="ball" style="--c:var(--ball-5)" aria-hidden="true"><b>5</b></span>
+        <h3>Favorite halls and check-ins</h3>
+        <p>“At ○○ at 8:14 pm” in one tap. Only the time is kept, so it never becomes untrue as time passes.</p>
+      </li>
+      <li id="f6">
+        <span class="ball" style="--c:var(--ball-6)" aria-hidden="true"><b>6</b></span>
+        <h3>Follow with a QR code</h3>
+        <p>Just show your QR code and let your friend scan it. No mistyped names.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="rules" aria-labelledby="h-rules">
+    <div class="rules-in">
+      <h2 id="h-rules" class="sec">Our rules</h2>
+      <ul>
+        <li>GPS is used only to list nearby halls. No continuous or background location.</li>
+        <li>Check-ins are visible to your followers only, never to everyone.</li>
+        <li>Match records stay on your device until you make them a post.</li>
+        <li>Block, mute and report are built in, so you can remove anyone you don’t want to see.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pro" id="pro" aria-labelledby="h-pro">
+    <div class="menu">
+      <h2 id="h-pro"><span class="pro-name">BilliHub Pro</span> <span class="price">¥<b>350</b> / month</span></h2>
+      <p class="lead">Almost everything is free. Pro is for when you want:</p>
+      <ul>
+        <li><span class="item">No ads</span></li>
+        <li><span class="item">Up to 4 photos per post</span><span class="free">1 on the free plan</span></li>
+        <li><span class="item">Unlimited saved 5-9 rule sets</span><span class="free">1 on the free plan</span></li>
+        <li><span class="item">Lifetime stats for all time</span><span class="free">last 90 days on the free plan</span></li>
+        <li><span class="item">The match calendar and bowlliards progress chart for all time</span><span class="free">last 30 days on the free plan</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="close" aria-label="Download">
+    <p class="close-tag">Keep the days you played,<br>and share them with your friends.</p>
+    <div class="get">
       <a class="badge" href="https://apps.apple.com/jp/app/id6809142556">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us">
-          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" height="48" loading="lazy">
         </picture>
       </a>
       <span class="soon">Currently available in Japan only. Android version coming soon.</span>
     </div>
-  </header>
+  </section>
+</main>
 
-  <h2>What it does</h2>
-  <ol class="feat">
-    <li><span class="ball"><b>1</b></span><div><h3>Match records and lifetime stats</h3>
-      <p>Nine-ball, eight-ball, ten-ball and 5-9. Record your opponent, the score and the date, and see your overall wins and losses and your record against each player. Any result can be shared with your followers as a post.</p></div></li>
-    <li><span class="ball"><b>2</b></span><div><h3>5-9 score sheet</h3>
-      <p>Score each rack on a sheet laid out like the paper one. Points differ from hall to hall and group to group, so you build and save your own rule sets. Handicaps are set per player. Two to six players.</p></div></li>
-    <li><span class="ball"><b>3</b></span><div><h3>Bowlliards</h3>
-      <p>Tap the frames and the app carries strikes and spares forward for you. Shows your average, your best and a rough class.</p></div></li>
-    <li><span class="ball"><b>4</b></span><div><h3>My cues</h3>
-      <p>Keep your cues with photos and notes, including parts such as shafts and tips.</p></div></li>
-    <li><span class="ball"><b>5</b></span><div><h3>Favorite halls and check-ins</h3>
-      <p>“At ○○ at 8:14 pm” in one tap. Only the time is kept, so it never becomes untrue as time passes.</p></div></li>
-    <li><span class="ball"><b>6</b></span><div><h3>Follow with a QR code</h3>
-      <p>Just show your QR code and let your friend scan it. No mistyped names.</p></div></li>
-  </ol>
-
-  <h2>Screens</h2>
-  <div class="grid">
-    <img class="shot" src="img/shot-1.png" alt="Recording a match" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-3.png" alt="5-9 score sheet" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-5.png" alt="Bowlliards score" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-4.png" alt="Match history" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-2.png" alt="Writing a post" width="540" height="960" loading="lazy">
-  </div>
-  <p class="soon" style="margin-top:10px">The screenshots show the Japanese version.</p>
-
-  <h2>Our rules</h2>
-  <div class="memo"><ul>
-    <li>GPS is used only to list nearby halls. No continuous or background location.</li>
-    <li>Check-ins are visible to your followers only, never to everyone.</li>
-    <li>Match records stay on your device until you make them a post.</li>
-    <li>Block, mute and report are built in, so you can remove anyone you don’t want to see.</li>
-  </ul></div>
-
-  <h2>BilliHub Pro (¥350 / month)</h2>
-  <div class="memo">
-    <p>Almost everything is free. Pro is for when you want:</p>
-    <ul>
-      <li>No ads</li>
-      <li>Up to 4 photos per post (1 on the free plan)</li>
-      <li>Unlimited saved 5-9 rule sets (1 on the free plan)</li>
-      <li>Lifetime stats for all time (last 90 days on the free plan)</li>
-      <li>The match calendar and bowlliards progress chart for all time (last 30 days on the free plan)</li>
-    </ul>
-  </div>
-
-  <footer>
-    <div class="docs">
-      <a href="privacy_en.html">Privacy Policy</a>
-      <a href="terms_en.html">Terms of Use</a>
-      <a href="delete-account.html">Deleting your account (Japanese)</a>
-    </div>
-    Contact nanana03info@gmail.com
-  </footer>
-</div>
+<footer class="foot">
+  <nav class="docs" aria-label="Documents">
+    <a href="privacy_en.html">Privacy Policy</a>
+    <a href="terms_en.html">Terms of Use</a>
+    <a href="delete-account.html" hreflang="ja">Deleting your account (Japanese)</a>
+  </nav>
+  <p>Contact <a href="mailto:nanana03info@gmail.com">nanana03info@gmail.com</a></p>
+</footer>
 </body>
 </html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BilliHub — ビリヤードのSNS</title>
   <meta name="description" content="撞いた日を残して、仲間と分け合う。対戦の記録と通算成績・5-9 のスコア表・ボーラード・マイキュー・チェックイン。ビリヤード用の iOS アプリ BilliHub の公式サイト。">
+  <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1A1C" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://billihub.nananasoft.com/">
   <link rel="alternate" hreflang="ja" href="https://billihub.nananasoft.com/">
   <link rel="alternate" hreflang="en" href="https://billihub.nananasoft.com/index_en.html">
@@ -15,83 +17,171 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/icon-256.png">
   <link rel="apple-touch-icon" href="img/icon-256.png">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<!-- 文面の正本＝_store/appstore_ja.md（App Store の説明文）。そこに無い機能は書かない。案＝design/site_mock.html の S3。
-     旧版（2026-09-18〜09-29）は 09-18 時点の機能4つと書類へのリンクだけの入口だった。 -->
-<div class="page">
-  <p class="lang"><a href="index_en.html" hreflang="en">English</a></p>
+<!-- 文面の正本＝_store/appstore_ja.md（App Store の説明文）。そこに無い機能は書かない。
+     2026-10 刷新（design.md）：ラックの絵・機能と実画面の対応・昼夜を入れ替える「決めごと」・メニュー型の Pro。
+     旧版（2026-09-30 Mac・案 S3「ノート型」）は git の main に残っている。 -->
+<a class="skip" href="#main">本文へ</a>
 
-  <header class="hero">
-    <img class="icon" src="img/icon-256.png" alt="BilliHub のアイコン" width="120" height="120">
-    <div>
-      <h1>BilliHub</h1>
-      <div class="sub">ビリヤードのSNS</div>
-      <p class="tag">撞いた日を残して、仲間と分け合う。</p>
+<header class="bar">
+  <a class="mark" href="index.html"><img src="img/icon-64.png" alt="" width="32" height="32"><span>BilliHub</span></a>
+  <nav aria-label="ページ内">
+    <a class="wide" href="#features">できること</a>
+    <a class="wide" href="#pro">Pro</a>
+    <a href="index_en.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-copy">
+      <p class="kicker">ビリヤードのSNS</p>
+      <h1 id="title">BilliHub</h1>
+      <p class="tag">撞いた日を残して、<br>仲間と分け合う。</p>
+      <div class="get">
+        <a class="badge" href="https://apps.apple.com/jp/app/id6809142556">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ja-jp">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ja-jp" alt="App Store からダウンロード" height="48">
+          </picture>
+        </a>
+        <span class="soon">Android 版は準備中です</span>
+      </div>
+    </div>
+
+    <div class="table" aria-hidden="true">
+      <div class="felt">
+        <span class="cue"></span>
+        <div class="rack">
+          <div class="col"><i class="b" style="--c:var(--ball-1)"><b>1</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-2)"><b>2</b></i><i class="b" style="--c:var(--ball-3)"><b>3</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-4)"><b>4</b></i><i class="b s" style="--c:var(--ball-1)"><b>9</b></i><i class="b" style="--c:var(--ball-5)"><b>5</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-6)"><b>6</b></i><i class="b" style="--c:var(--ball-7)"><b>7</b></i></div>
+          <div class="col"><i class="b" style="--c:var(--ball-8)"><b>8</b></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="h-features">
+    <div class="sec-head">
+    <h2 id="h-features" class="sec">できること</h2>
+    <nav class="rotation" aria-label="機能へ移動">
+      <a href="#f1" aria-label="1. 対戦の記録と通算成績"><span class="ball" style="--c:var(--ball-1)"><b>1</b></span></a>
+      <a href="#f2" aria-label="2. 5-9 のスコア表"><span class="ball" style="--c:var(--ball-2)"><b>2</b></span></a>
+      <a href="#f3" aria-label="3. ボーラード"><span class="ball" style="--c:var(--ball-3)"><b>3</b></span></a>
+      <a href="#f4" aria-label="4. マイキュー"><span class="ball" style="--c:var(--ball-4)"><b>4</b></span></a>
+      <a href="#f5" aria-label="5. よく行く店とチェックイン"><span class="ball" style="--c:var(--ball-5)"><b>5</b></span></a>
+      <a href="#f6" aria-label="6. フォローはその場で QR"><span class="ball" style="--c:var(--ball-6)"><b>6</b></span></a>
+    </nav>
+    </div>
+
+    <article class="feat" id="f1">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-1)" aria-hidden="true"><b>1</b></span>
+        <h3>対戦の記録と通算成績</h3>
+        <p>ナインボール・エイトボール・テンボール・5-9。相手とスコアと日付を残すと、通算の勝敗と相手ごとの成績が出ます。残した結果は、そのまま投稿にしてフォロワーに流せます。</p>
+      </div>
+      <div class="shots three">
+        <figure><picture><source srcset="img/shot-1.webp" type="image/webp"><img src="img/shot-1.png" alt="対戦を記録する画面" width="540" height="960" loading="lazy"></picture><figcaption>記録</figcaption></figure>
+        <figure><picture><source srcset="img/shot-4.webp" type="image/webp"><img src="img/shot-4.png" alt="戦績の画面" width="540" height="960" loading="lazy"></picture><figcaption>戦績</figcaption></figure>
+        <figure><picture><source srcset="img/shot-2.webp" type="image/webp"><img src="img/shot-2.png" alt="投稿する画面" width="540" height="960" loading="lazy"></picture><figcaption>投稿</figcaption></figure>
+      </div>
+    </article>
+
+    <div class="pair">
+    <article class="feat duo" id="f2">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-2)" aria-hidden="true"><b>2</b></span>
+        <h3>5-9 のスコア表</h3>
+        <p>紙のスコアシートと同じ形で、ラックごとに点を付けられます。配点は店ごと、仲間内ごとに違うので、ルールセットとして作って保存できます。ハンデは人ごとに。2人から6人まで。</p>
+      </div>
+      <div class="shots one">
+        <figure><picture><source srcset="img/shot-3.webp" type="image/webp"><img src="img/shot-3.png" alt="5-9 のスコア表" width="540" height="960" loading="lazy"></picture></figure>
+      </div>
+    </article>
+
+    <article class="feat duo" id="f3">
+      <div class="feat-text">
+        <span class="ball" style="--c:var(--ball-3)" aria-hidden="true"><b>3</b></span>
+        <h3>ボーラード</h3>
+        <p>フレーム表をタップで付けると、ストライクとスペアの繰り越しはアプリが計算します。平均とベスト、クラスの目安も出ます。</p>
+      </div>
+      <div class="shots one">
+        <figure><picture><source srcset="img/shot-5.webp" type="image/webp"><img src="img/shot-5.png" alt="ボーラードのスコア" width="540" height="960" loading="lazy"></picture></figure>
+      </div>
+    </article>
+    </div>
+
+    <ul class="frames">
+      <li id="f4">
+        <span class="ball" style="--c:var(--ball-4)" aria-hidden="true"><b>4</b></span>
+        <h3>マイキュー</h3>
+        <p>持っているキューを写真とメモで残せます。シャフトやタップなどのパーツも自由に書けます。</p>
+      </li>
+      <li id="f5">
+        <span class="ball" style="--c:var(--ball-5)" aria-hidden="true"><b>5</b></span>
+        <h3>よく行く店とチェックイン</h3>
+        <p>「20時14分に ○○ へ」を1タップで。時刻だけを残すので、時間が経っても嘘になりません。</p>
+      </li>
+      <li id="f6">
+        <span class="ball" style="--c:var(--ball-6)" aria-hidden="true"><b>6</b></span>
+        <h3>フォローはその場で QR</h3>
+        <p>QR を見せて読んでもらうだけ。名前を打ち間違える手間がありません。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="rules" aria-labelledby="h-rules">
+    <div class="rules-in">
+      <h2 id="h-rules" class="sec">決めごと</h2>
+      <ul>
+        <li>GPS は「近くの店を出す」ときだけ使います。常時取得もバックグラウンド取得もしません。</li>
+        <li>チェックインが見えるのはフォロワーだけです。全体公開にはなりません。</li>
+        <li>対戦の記録は、投稿にするまで端末の中だけに残ります。</li>
+        <li>ブロック・ミュート・通報を用意しています。見たくない相手を自分で外せます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pro" id="pro" aria-labelledby="h-pro">
+    <div class="menu">
+      <h2 id="h-pro"><span class="pro-name">BilliHub Pro</span> <span class="price">月額 <b>350</b> 円</span></h2>
+      <p class="lead">中身はほとんど無料で使えます。Pro は、次のものが要るときの登録です。</p>
+      <ul>
+        <li><span class="item">広告が出ない</span></li>
+        <li><span class="item">投稿に写真を4枚まで付けられる</span><span class="free">無料は1枚</span></li>
+        <li><span class="item">5-9 のルールセットを何個でも保存できる</span><span class="free">無料は1つ</span></li>
+        <li><span class="item">通算成績を全期間で見られる</span><span class="free">無料は直近90日</span></li>
+        <li><span class="item">戦績のカレンダーとボーラードの成長グラフを全期間で見られる</span><span class="free">無料は直近30日</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="close" aria-label="ダウンロード">
+    <p class="close-tag">撞いた日を残して、<br>仲間と分け合う。</p>
+    <div class="get">
       <a class="badge" href="https://apps.apple.com/jp/app/id6809142556">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/ja-jp">
-          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ja-jp" alt="App Store からダウンロード">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ja-jp" alt="App Store からダウンロード" height="48" loading="lazy">
         </picture>
       </a>
       <span class="soon">Android 版は準備中です</span>
     </div>
-  </header>
+  </section>
+</main>
 
-  <h2>できること</h2>
-  <ol class="feat">
-    <li><span class="ball"><b>1</b></span><div><h3>対戦の記録と通算成績</h3>
-      <p>ナインボール・エイトボール・テンボール・5-9。相手とスコアと日付を残すと、通算の勝敗と相手ごとの成績が出ます。残した結果は、そのまま投稿にしてフォロワーに流せます。</p></div></li>
-    <li><span class="ball"><b>2</b></span><div><h3>5-9 のスコア表</h3>
-      <p>紙のスコアシートと同じ形で、ラックごとに点を付けられます。配点は店ごと、仲間内ごとに違うので、ルールセットとして作って保存できます。ハンデは人ごとに。2人から6人まで。</p></div></li>
-    <li><span class="ball"><b>3</b></span><div><h3>ボーラード</h3>
-      <p>フレーム表をタップで付けると、ストライクとスペアの繰り越しはアプリが計算します。平均とベスト、クラスの目安も出ます。</p></div></li>
-    <li><span class="ball"><b>4</b></span><div><h3>マイキュー</h3>
-      <p>持っているキューを写真とメモで残せます。シャフトやタップなどのパーツも自由に書けます。</p></div></li>
-    <li><span class="ball"><b>5</b></span><div><h3>よく行く店とチェックイン</h3>
-      <p>「20時14分に ○○ へ」を1タップで。時刻だけを残すので、時間が経っても嘘になりません。</p></div></li>
-    <li><span class="ball"><b>6</b></span><div><h3>フォローはその場で QR</h3>
-      <p>QR を見せて読んでもらうだけ。名前を打ち間違える手間がありません。</p></div></li>
-  </ol>
-
-  <h2>画面</h2>
-  <div class="grid">
-    <img class="shot" src="img/shot-1.png" alt="対戦を記録する画面" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-3.png" alt="5-9 のスコア表" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-5.png" alt="ボーラードのスコア" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-4.png" alt="戦績の画面" width="540" height="960" loading="lazy">
-    <img class="shot" src="img/shot-2.png" alt="投稿する画面" width="540" height="960" loading="lazy">
-  </div>
-
-  <h2>決めごと</h2>
-  <div class="memo"><ul>
-    <li>GPS は「近くの店を出す」ときだけ使います。常時取得もバックグラウンド取得もしません。</li>
-    <li>チェックインが見えるのはフォロワーだけです。全体公開にはなりません。</li>
-    <li>対戦の記録は、投稿にするまで端末の中だけに残ります。</li>
-    <li>ブロック・ミュート・通報を用意しています。見たくない相手を自分で外せます。</li>
-  </ul></div>
-
-  <h2>BilliHub Pro（月額350円）</h2>
-  <div class="memo">
-    <p>中身はほとんど無料で使えます。Pro は、次のものが要るときの登録です。</p>
-    <ul>
-      <li>広告が出ない</li>
-      <li>投稿に写真を4枚まで付けられる（無料は1枚）</li>
-      <li>5-9 のルールセットを何個でも保存できる（無料は1つ）</li>
-      <li>通算成績を全期間で見られる（無料は直近90日）</li>
-      <li>戦績のカレンダーとボーラードの成長グラフを全期間で見られる（無料は直近30日）</li>
-    </ul>
-  </div>
-
-  <footer>
-    <div class="docs">
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="terms.html">利用規約</a>
-      <a href="delete-account.html">アカウントとデータの削除</a>
-    </div>
-    お問い合わせ nanana03info@gmail.com
-  </footer>
-</div>
+<footer class="foot">
+  <nav class="docs" aria-label="書類">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="delete-account.html">アカウントとデータの削除</a>
+  </nav>
+  <p>お問い合わせ <a href="mailto:nanana03info@gmail.com">nanana03info@gmail.com</a></p>
+</footer>
 </body>
 </html>

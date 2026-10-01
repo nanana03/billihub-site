@@ -1,53 +1,124 @@
-/* BilliHub の公開ページ。色は**アプリの夜テーマ**（src/theme.js の ocean）に合わせている。
-   ⚠️ アプリの色を変えたら、ここも合わせる。
-   ⚠️ 体裁の元＝nanana03/mtbhub-site/style.css（同じ作りにして、直すときに迷わないようにする）。 */
-:root {
-  --bg: #0D1A1C;      /* ocean.paper */
-  --card: #153036;    /* ocean.card */
-  --ink: #E7EEEB;     /* ocean.ink */
-  --sub: #8FADAC;     /* ocean.ink2 */
-  --line: #234A52;    /* ocean.line */
-  --accent: #54AFC4;  /* ocean.accent */
-  --warn: #D9C79A;    /* ocean.chalk */
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
+@import url("tokens.css");
+/* Hallmark · genre: editorial · macrostructure: Long Document · design-system: design.md · designed-as-app
+ * BilliHub の書類（privacy / privacy_en / terms / terms_en / delete-account）の見た目。
+ * 色・余白は tokens.css（アプリの src/theme.js の昼 diner／夜 ocean。端末の外観設定で切り替わる）。
+ * ⚠️ 本文の HTML は BilliHub/_store/site/build_site.py の雛形のまま（本文には触らない）。
+ *    上の帯 header.bar は <main> の外に足したもの＝雛形から作り直して帯が無くても崩れないように書いてある。 */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html, body { overflow-x: clip; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--bg);
+  background: var(--paper);
   color: var(--ink);
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  line-height: 1.85;
-  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--t-md);
+  line-height: 1.9;
 }
-main { max-width: 720px; margin: 0 auto; padding: 28px 20px 64px; }
-header.hero { text-align: center; padding: 32px 0 4px; }
-h1 { font-size: 1.9rem; letter-spacing: .02em; }
-h1 .hub { color: var(--accent); }
-.hero .en { color: var(--sub); font-size: .9rem; letter-spacing: .16em; margin-top: 2px; }
-.hero .tagline { margin-top: 16px; color: var(--ink); font-size: 1rem; }
+a { color: var(--link); text-decoration-thickness: var(--hair); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: var(--thick); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+/* 上の帯（トップへ戻る） */
+.bar {
+  width: min(1180px, 100% - 2 * var(--s-4)); margin-inline: auto;
+  display: flex; align-items: center; min-height: 64px;
+  border-bottom: var(--hair) solid var(--line);
+}
+@media (min-width: 768px) { .bar { width: min(1180px, 100% - 2 * var(--s-7)); } }
+.mark { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; color: var(--ink); text-decoration: none; font-weight: 800; white-space: nowrap; }
+.mark img { width: 32px; height: 32px; border-radius: 8px; }
+
+main {
+  width: min(760px, 100% - 2 * var(--s-4)); margin-inline: auto;
+  padding-block: var(--s-7) var(--s-8);
+}
+
+/* 表題：小さい「BILLIHUB」→ 大きい題 → 最終更新日 */
+header.hero {
+  display: flex; flex-direction: column;
+  padding-bottom: var(--s-5); margin-bottom: var(--s-6);
+  border-bottom: var(--thick) solid var(--ink);
+}
+header.hero .en {
+  order: -1; color: var(--accent-text); font-size: var(--t-xs); font-weight: 800; letter-spacing: .18em;
+}
+h1 {
+  font-size: var(--t-2xl); font-weight: 800; line-height: 1.3; letter-spacing: -.01em;
+  margin-top: var(--s-2); overflow-wrap: anywhere; min-width: 0;
+}
+.updated { color: var(--ink2); font-size: var(--t-xs); margin-top: var(--s-3); font-variant-numeric: tabular-nums; }
+
 h2 {
-  font-size: 1.2rem; margin: 42px 0 14px;
-  padding-left: 12px; border-left: 4px solid var(--accent);
+  font-size: var(--t-xl); font-weight: 800; line-height: 1.45; letter-spacing: -.005em;
+  margin: var(--s-8) 0 var(--s-4);
+  padding-top: var(--s-4);
+  border-top: var(--hair) solid var(--line);
 }
-h3 { font-size: 1rem; margin: 20px 0 8px; color: var(--accent); }
-p, li, td, th { color: var(--sub); font-size: .95rem; }
-strong { color: var(--ink); }
+h3 { font-size: var(--t-lg); font-weight: 800; color: var(--accent-text); margin: var(--s-6) 0 var(--s-2); line-height: 1.5; }
+p { margin-block: var(--s-3); }
+p, li, td, th { font-size: var(--t-md); }
+li { color: var(--ink); }
+strong { font-weight: 800; color: var(--ink); }
+
 .card {
-  background: var(--card); border: 1px solid var(--line);
-  border-radius: 14px; padding: 18px 20px; margin-bottom: 12px;
+  background: var(--card);
+  border: var(--hair) solid var(--line); border-radius: var(--r-card);
+  padding: var(--s-4) var(--s-5); margin-block: var(--s-4);
 }
 ul, ol { padding-left: 1.3em; }
-li { margin-bottom: .4em; }
-a { color: var(--accent); }
-.updated { color: var(--sub); font-size: .85rem; margin-top: 8px; }
-table { width: 100%; border-collapse: collapse; margin: 6px 0 2px; }
-th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); font-size: .9rem; }
-th { color: var(--ink); font-weight: 800; }
-.note { color: var(--warn); }
-nav.links { text-align: center; margin-top: 28px; }
-nav.links a { margin: 0 10px; font-weight: 700; }
-footer {
-  margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
-  color: var(--sub); font-size: .85rem; text-align: center;
-}
-/* 横に広い表は、はみ出さずに中でスクロールさせる */
+li { margin-block: var(--s-2); }
+li::marker { color: var(--accent-text); }
+.card > ul > li + li { border-top: var(--hair) solid var(--line); padding-top: var(--s-2); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; vertical-align: top; padding: var(--s-2) var(--s-2); border-bottom: var(--hair) solid var(--line); font-size: var(--t-sm); line-height: 1.75; }
+th { font-weight: 800; color: var(--ink); border-bottom: var(--thick) solid var(--ink); white-space: nowrap; }
+td { color: var(--ink); }
+td:first-child { font-weight: 700; min-width: 7.5em; }
+tr:last-child td { border-bottom: 0; }
 .scroll { overflow-x: auto; }
+
+code {
+  font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: .9em;
+  background: var(--paper); border: var(--hair) solid var(--line); border-radius: 4px; padding: 0 .3em;
+  overflow-wrap: anywhere; word-break: break-all;
+}
+.note { color: var(--accent-text); }
+.updated + p, header.hero + p { font-size: var(--t-lg); line-height: 1.85; }
+
+nav.links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-1) var(--s-5);
+  margin-top: var(--s-8); padding-top: var(--s-5);
+  border-top: var(--thick) solid var(--ink);
+}
+nav.links a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; white-space: nowrap; }
+footer { margin-top: var(--s-3); color: var(--ink2); font-size: var(--t-sm); text-align: center; }
+
+/* 目次（doc.js が h2 から作る）。広い画面だけ左に固定 */
+.toc { display: none; }
+@media (min-width: 1180px) {
+  .toc {
+    display: block; position: fixed; top: 112px;
+    left: calc(50% - 380px - var(--s-7) - 220px); width: 220px;
+    max-height: calc(100vh - 140px); overflow-y: auto;
+    font-size: var(--t-xs); line-height: 1.5;
+  }
+  .toc-title { font-weight: 800; letter-spacing: .12em; color: var(--accent-text); margin: 0 0 var(--s-2); }
+  .toc ol { list-style: none; padding: 0; border-left: var(--hair) solid var(--line); }
+  .toc li { margin: 0; }
+  .toc a {
+    display: block; padding: var(--s-1) var(--s-3); margin-left: -1px;
+    border-left: var(--thick) solid transparent;
+    color: var(--ink2); text-decoration: none;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .toc a:hover { color: var(--ink); }
+  .toc a[aria-current] { color: var(--ink); font-weight: 700; border-left-color: var(--accent); }
+}
+h2 { scroll-margin-top: var(--s-5); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
